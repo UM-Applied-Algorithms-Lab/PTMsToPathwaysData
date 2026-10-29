@@ -301,4 +301,84 @@ md[nrow(md) + 1, ] <- list(
   "ExperimentHub, PTMsToPathwaysData, BRCA, network, phosphoproteomics"
 )
 
+md[nrow(md) + 1, ] <- list(
+  "Full MCL Output",
+  "Cluster List objects derived PTMsToPathways::MakeClusterList() from the sample AlldataPTMs.txt dataset",
+  "3.24",
+  "NA",
+  "RDA",
+  "https://zenodo.org/records/21140693/files/full_MCL_output.rda",
+  3,
+  "Homo sapiens",
+  "9606",
+  TRUE,
+  "University of Montana Applied Algorithms Lab",
+  "Lucia Williams <lucia.williams@umt.edu>",
+  "list",
+  "Rda",
+  "https://zenodo.org/",
+  "records/21140693/files/full_MCL_output.rda",
+  "ExperimentHub, PTMsToPathwaysData, MCL"
+)
+
+md[nrow(md) + 1, ] <- list(
+  "Full CCCN Output",
+  "CoCluster Correlation Network objects derived PTMsToPathways::MakeCorrelationNetwork() from the sample AlldataPTMs.txt dataset",
+  "3.24",
+  "NA",
+  "RDA",
+  "https://zenodo.org/records/21140693/files/full_CCCN_output.rda",
+  3,
+  "Homo sapiens",
+  "9606",
+  TRUE,
+  "University of Montana Applied Algorithms Lab",
+  "Lucia Williams <lucia.williams@umt.edu>",
+  "list",
+  "Rda",
+  "https://zenodo.org/",
+  "records/21140693/files/full_CCCN_output.rda",
+  "ExperimentHub, PTMsToPathwaysData, CCCN"
+)
+
+md[nrow(md) + 1, ] <- list(
+  "Full CFN Output",
+  "Cluster Filtered Network objects derived PTMsToPathways::MakeClusterFilteredNetwork() from the sample AlldataPTMs.txt dataset",
+  "3.24",
+  "NA",
+  "RDA",
+  "https://zenodo.org/records/21140693/files/full_CFN_output.rda",
+  3,
+  "Homo sapiens",
+  "9606",
+  TRUE,
+  "University of Montana Applied Algorithms Lab",
+  "Lucia Williams <lucia.williams@umt.edu>",
+  "list",
+  "Rda",
+  "https://zenodo.org/",
+  "records/21140693/files/full_CFN_output.data.rda",
+  "ExperimentHub, PTMsToPathwaysData, CFN"
+)
+
+md[nrow(md) + 1, ] <- list(
+  "Full PCN Output",
+  "Pathway Crosstalk Network objects derived PTMsToPathways::BuildPathwayCrosstalkNetwork() from the sample AlldataPTMs.txt dataset",
+  "3.24",
+  "NA",
+  "RDA",
+  "https://zenodo.org/records/21140693/files/full_PCN_output.rda",
+  3,
+  "Homo sapiens",
+  "9606",
+  TRUE,
+  "University of Montana Applied Algorithms Lab",
+  "Lucia Williams <lucia.williams@umt.edu>",
+  "list",
+  "Rda",
+  "https://zenodo.org/",
+  "records/21140693/files/full_PCN_output.data.rda",
+  "ExperimentHub, PTMsToPathwaysData, PCN"
+)
+
 utils::write.csv(md, metadata_path, row.names = FALSE, quote = TRUE)

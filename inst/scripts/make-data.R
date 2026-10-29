@@ -37,6 +37,30 @@ function_key <- read.table(
 
 save(function_key)
 
+# Full outputs from PTMsToPathways functions:
+# MakeClusterList, MakeCorrelationNetwork, BuildClusterFilteredNetwork, and BuildPathwayCrosstalkNetwork
+
+set.seed(1)
+full_MCL_output = MakeClusterList(ex_full_ptm_table)
+save(full_MCL_output, file = "full_MCL_output.rda")
+
+fullCCCN.data = MakeCorrelationNetwork(adj.consensus.matrix, ptm.correlation.matrix)
+save(fullCCCN.data, file = 'full_CCCN_output.rda')
+
+stringdb.edges = GetSTRINGdb.edges(gene.cccn.matrix, gene.cccn.nodes)
+
+# gm.local.path = "path/to/your_hugo.tsv"
+genemania.edges = GetGeneMANIA.edges("unneeded", gene.cccn.nodes, local = TRUE, genemania.local.path = gm.local.path)
+
+kse.path <- system.file("extdata", "Kinase_Substrate_Dataset.txt", package = "PTMsToPathways")
+kinsub.edges <- GetKinsub.edges(kse.path, gene.cccn.nodes)
+network.list = BuildClusterFilteredNetwork(gene.cccn.edges, stringdb.edges, genemania.edges, kinsub.edges)
+save(network.list, file = "full_CFN_output.rda")
+
+bioplanet.file <- system.file("extdata", "pathway.csv", package = "PTMsToPathways")
+PCN.data = BuildPathwayCrosstalkNetwork(common.clusters, bioplanet.file)
+save(PCN.data, "full_PCN_data.rda")
+
 # BRCA Networks vignette:
 
 #  bioplanet_pathway_June2025.csv is a list of pathways downloaded from BioPlanet.
@@ -46,8 +70,8 @@ save(function_key)
 
 #  PhosphoDiscoData_mmc9.txt is downloaded from https://pmc.ncbi.nlm.nih.gov/articles/PMC10416063/, Supplementary Table S2
 
-# The rest of the data are processed using functions from the PTMsToPathways package and described in the 
-# BRCA data vignette there. The following script also 
+# The rest of the data are processed using functions from the PTMsToPathways package and described in the
+# BRCA data vignette there. The following script also
 
 # Process the BRCA phosphoproteomics data for use in the vignette
 file_path <- system.file("extdata", "PhosphoDiscoData_mmc9.txt", package = "PTMsToPathways")
