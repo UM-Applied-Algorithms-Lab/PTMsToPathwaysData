@@ -12,15 +12,16 @@ Description: Companion data package for PTMsToPathways that registers
 License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: false
-Depends:
-    R (>= 4.6.0),
+Imports:
     ExperimentHub
+Depends:
+    R (>= 4.6.0)
 Suggests:
     knitr,
     rmarkdown
 VignetteBuilder: knitr
 biocViews: ExperimentHub, CancerData, MassSpectrometryData
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 8.0.0
 URL: https://github.com/UM-Applied-Algorithms-Lab/PTMsToPathwaysData
 BugReports: https://github.com/UM-Applied-Algorithms-Lab/PTMsToPathwaysData/issues
+Config/roxygen2/version: 8.1.1

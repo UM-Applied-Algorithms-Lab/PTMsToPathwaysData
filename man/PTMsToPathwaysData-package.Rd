@@ -42,10 +42,9 @@ Use \code{\link[=PTMsToPathwaysData]{PTMsToPathwaysData()}} to query the Experim
 this package.
 }
 \examples{
-\donttest{
 eh <- ExperimentHub::ExperimentHub()
-query(eh, "PTMsToPathwaysData")
-}
+# can be fixed when PTMsToPathwaysData is on Bioconductor
+# query(eh, "PTMsToPathwaysData")
 
 }
 \seealso{
