@@ -18,7 +18,8 @@ Depends:
     R (>= 4.6.0)
 Suggests:
     knitr,
-    rmarkdown
+    rmarkdown,
+    BiocStyle
 VignetteBuilder: knitr
 biocViews: ExperimentHub, CancerData, MassSpectrometryData
 Roxygen: list(markdown = TRUE)
